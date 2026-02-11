@@ -1,0 +1,10 @@
+ip   192.168.1.14
+mask 255.255.255.0
+default wlan0 192.168.1.1
+
+dns1: 200.48.255.146
+dns2: 200.48.255.130
+
+https://raspberryparanovatos.com/tutoriales/asignar-ip-fija-raspberry-pi/
+
+VNC Viewer 192.168.1.250

@@ -1,0 +1,14 @@
+comando final 
+
+ffmpeg -i che.mp4 -c:a mp3 -c:v mjpeg -s 240x135 -r 23.98 -q 10 che.avi
+ffmpeg -i mcr.mp4 -c:a mp3 -c:v mjpeg -s 240x135 -r 23.98 -q 10 mcr.avi
+ffmpeg -i red.mp4 -c:a mp3 -c:v mjpeg -s 240x135 -r 23.98 -q 10 red.avi
+ffmpeg -i gre.mp4 -c:a mp3 -c:v mjpeg -s 240x135 -r 23.98 -q 10 gre.avi
+ffmpeg -i oas.mp4 -c:a mp3 -c:v mjpeg -s 240x135 -r 25.00 -q 10 oas.avi
+
+
+ffmpeg -i che.mp4 -c:a mp3 -c:v mjpeg -s 320x170 -r 23.98 -q 10 che.avi
+ffmpeg -i mcr.mp4 -c:a mp3 -c:v mjpeg -s 320x170 -r 23.98 -q 10 mcr.avi
+ffmpeg -i red.mp4 -c:a mp3 -c:v mjpeg -s 320x170 -r 23.98 -q 10 red.avi
+ffmpeg -i gre.mp4 -c:a mp3 -c:v mjpeg -s 320x170 -r 23.98 -q 10 gre.avi
+ffmpeg -i oas.mp4 -c:a mp3 -c:v mjpeg -s 320x170 -r 25.00 -q 10 oas.avi

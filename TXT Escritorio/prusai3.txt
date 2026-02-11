@@ -1,0 +1,4 @@
+de vez en cuando, puede encontrar el problema con la corrección de rizos cuando se imprimen modelos 3D.
+Corrección de rizado es lo que se imprime partes inclina el borde de la plataforma. Aquí hay algunos consejos que pueden ayudarte a evitar:
+1. Asegúrese de que la pila impresa esté arriba con una capa de pegamento antes de imprimir. Especialmente el lugar que usted conoce tendrá el problema de la deformación del borde.
+2. Es mejor hacer que el cabezal de impresión y la plataforma de impresión estén más ajustados que las condiciones normales. Esto te ayudará a hacer la mejor impresión de capas. Pero también para evitar que el ajuste de la brecha sea demasiado apretado, esto puede causar la falla del flujo de material.

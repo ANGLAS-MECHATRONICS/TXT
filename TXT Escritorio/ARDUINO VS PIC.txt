@@ -1,0 +1,5 @@
+ES MUY SIMPLE… ARDUINO ES PARA AFICIONADOS Y PIC PARA PROFESIONALES. SABER ARDUINO ES SABER C, HACER UN DISEÑO CON PIC REQUIERE DE CONOCIMIENTO DE ELECTRÓNICA Y SOFTWARE, ENSAMBLADOR Y/O C. SOY INGENIERO Y TENGO EXPERIENCIA EN MICROPROCESADORES Y MICROCONTROLADORES, SI UTILIZO ARDUINO SIENTO COMO QUE EL DISEÑO NO LO HICE YO, LOS DISEÑOS Y PRODUCTOS QUE REALIZO CON PICs SON 100% HECHOS POR MI, HARDWARE Y SOFTWARE. GRAN SATISFACCIÓN Y CONOCIMIENTO.
+
+
+
+Gracias por tu comentario, creo que lo de los pics es mas para gente que gusta de la personalización, yo también disfruto de realizar un circuito desde el diseño electrónico, la manufactura del PCB, hasta la elaboracion del software y la puesta en marcha del proyecto, sin embargo no podemos negar que esto lleva su tiempo y la realizacion con Arduino es más rapida, pero eso no nos impide disfrutarlo, saludos.

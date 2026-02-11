@@ -1,0 +1,39 @@
+📌 Reglas rápidas para tu proyecto (QCC5125 + PCM5102A + PAM8403)
+🎧 Señal de audio (IN / OUT / filtros)
+	👉 C0G / NP0 0603
+⚡ Alimentación (VDD, PVDD)
+	👉 X7R 0603
+	👉 Siemrep Tantalo +  Ceramico 
+	
+	pam8403drez
+		470uF 6.3V tantalio 
+		105 (1uF) X7R
+		
+		6.8 µH / 5 A (Baja DCR, Blindada (shielded) → menos ruido EMI)
+		
+		1ohmios 0603 basta
+		2.2nF 50V 0603(C0G/NP0)	
+		
+		224(0.22uF) 25V 0603 O 0805 (C0G/NP0)	
+		
+		104 (0.1uF) 10V 0603 X7R (puede ser 25V solo que son mas grandes)
+		106 (10uF ) 10V 0603 X7R (puede ser 25V solo que son mas grandes)
+		
+	
+	👉 + 1 electrolítico 220–470 µF cerca del ampli
+	
+
+En aplicaciones donde los requisitos EMI no son altos, el PAM8403 se puede utilizar conectando directamente un altavoz a la salida o agregando un núcleo de ferrita a la salida, como se muestra en el siguiente diagrama:
+	OUTP -> FB 1000OΩ -> P_ALTAVOZ
+					  -> 1nF a GND	
+	
+	OUTL -> FB 1000OΩ -> L_ALTAVOZ
+					  -> 1nF a GND	
+					  
+					  ELEGIR ESTO
+Si el PAM8403 se utiliza en un sistema con altos requisitos EMI, se puede conectar un filtro LC en serie en la salida, como se muestra en el diagrama a continuación:
+	OUTP -> 15uH -> P_ALTAVOZ
+				 -> 2.2uF a GND	
+	
+	OUTL -> 15uH -> L_ALTAVOZ
+				 -> 2.2uF a GND	(ceramico X7R)

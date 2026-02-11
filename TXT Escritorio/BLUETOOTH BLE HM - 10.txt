@@ -1,0 +1,7 @@
+A mi me paso lo mismo es un BLE, tienes que hacer un divisor de voltaje para que reciba 3.3v y no 5V que te da arduino en el RX del bluetooth, la contraseña te la da el mismo bluetooth con los comandos AT en el puerto serial del arduino.
+
+Efectivamente es un Bluetooth Ble o 4.0 y es totalmente compatible con Android y Iphone, siempre que los móviles tengan Bluetooth 4.0 o superior (En la actualidad casi todos) EL HC06 y HC05, NO son compatibles con Iphone. No necesitas vincularte para poder realizar la comunicación, pero si necesitas un App que sea compatible con el bluetooth BLE o 4.0.
+
+Esta App para Android es compatible con Bluetooth 4.0, puedes comunicarte con el módulo, sin necesidad de vincularte
+
+https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal

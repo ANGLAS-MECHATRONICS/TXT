@@ -1,0 +1,21 @@
+"MOVISTAR_6B60","unPghGuTGsnE6UcuhUFD"
+"MOVISTAR_7758","3mVHD33k9WVmcJ9"
+
+//192.168.1.1
+user
+#5AFC79@1D606B*
+
+jesuslvnov@gmail.com
+jesus52
+++++++++
+AT+CIFSR
++CIFSR:APIP,"192.168.4.1"
++CIFSR:APMAC,"2e:3a:e8:24:14:d4"
++CIFSR:STAIP,"192.168.1.5"       // ESTA ESTOY USANDO
++CIFSR:STAMAC,"2c:3a:e8:24:14:d4"
+
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+?
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+

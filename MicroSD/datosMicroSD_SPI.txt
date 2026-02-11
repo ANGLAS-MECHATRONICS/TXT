@@ -1,0 +1,23 @@
+Micro SD y datos de esta longitud:
+	4/11/2024,14:20:34,0,0,0,0,0,0.00,30,22
+	
+aproximado y con las pruebas que hice:
+	Generando datos y guardando cada 1 segundo en la micro SD
+		1 año  = 0.7GB
+		2 años = 1.4GB ( en 2 años generara datos y estos pesaran 1.4GB y si la memoria que colocamos es de 1GB fallara.)
+		3 años = 2.1GB
+		4 años = 2.8GB
+		5 años = 3.5GB
+		8 años = 5.6GB
+	   12 años = 8.4GB
+	   
+	   ///aqui es lo mismo (en 1)
+	    1 GB → 1.43 años (en 1GB al transcurrir 1.43años se llenara los datos)
+		2 GB → 2.86 años
+		4 GB → 5.71 años
+		8 GB → 11.43 años
+		16 GB → 22.86 años
+		32 GB → 45.71 años
+		64 GB → 91.43 años
+		128 GB → 182.86 años
+

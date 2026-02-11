@@ -1,0 +1,186 @@
+//DEFINIMOS LOS PINES DE FILAS(OUTPUT)  Y COLUMNAS(INPUT RES PULL-DOWN 10K)
+#define F1 RB4_bit
+#define F2 RB5_bit
+#define F3 RB6_bit
+#define F4 RB7_bit
+#define C1 RB0_bit
+#define C2 RB1_bit
+#define C3 RB2_bit
+#define C4 RB3_bit
+////////////////////////////////////////
+#define led1 RA0_bit
+
+int tecla = 0;
+short contTeclado1 = 0;
+short mem1=0,mem2=0,mem3=0,mem4=0,mem5=0,mem6=0,mem7=0,mem8=0,mem9=0,mem10=0,mem11=0,mem12=0,mem13=0,mem14=0,mem15=0,mem16=0;
+
+void keypad1(){  //FUNCION DE MULTIPLEXAXION
+       contTeclado1 = contTeclado1++;
+       Delay_us(3000);
+       if(contTeclado1 == 1){
+          F1 = 1;
+          F2 = 0;
+          F3 = 0;
+          F4 = 0;}
+       if(contTeclado1 == 2){
+          F1 = 0;
+          F2 = 1;
+          F3 = 0;
+          F4 = 0;}
+       if(contTeclado1 == 3){
+          F1 = 0;
+          F2 = 0;
+          F3 = 1;
+          F4 = 0;}
+       if(contTeclado1 == 4){
+          F1 = 0;
+          F2 = 0;
+          F3 = 0;
+          F4 = 1;}
+       if(contTeclado1 > 4){
+          contTeclado1 = 0;}
+       /////////////////////////////////////////////////////////
+       if(contTeclado1 == 1){
+          if(C1 == 1 && mem1 == 0){
+             mem1 = 1;}
+          if(C1 == 0 && mem1 == 1){
+             tecla = 1;
+             mem1 = 0;}
+
+          if(C2 == 1 && mem2 == 0){
+             mem2 = 1;}
+          if(C2 == 0 && mem2 == 1){
+             tecla = 2;
+             mem2 = 0;}
+
+          if(C3 == 1 && mem3 == 0){
+             mem3 = 1;}
+          if(C3 == 0 && mem3 == 1){
+             tecla = 3;
+             mem3 = 0;}
+
+          if(C4 == 1 && mem4 == 0){
+             mem4 = 1;}
+          if(C4 == 0 && mem4 == 1){
+             tecla = 4;
+             mem4 = 0;}      } //A
+       ////////////////////////////////////////////
+       if(contTeclado1 == 2){
+          if(C1 == 1 && mem5 == 0){
+             mem5 = 1;}
+          if(C1 == 0 && mem5 == 1){
+             tecla = 5;
+             mem5 = 0;}
+
+          if(C2 == 1 && mem6 == 0){
+             mem6 = 1;}
+          if(C2 == 0 && mem6 == 1){
+             tecla = 6;
+             mem6 = 0;}
+
+          if(C3 == 1 && mem7 == 0){
+             mem7 = 1;}
+          if(C3 == 0 && mem7 == 1){
+             tecla = 7;
+             mem7 = 0;}
+
+          if(C4 == 1 && mem8 == 0){
+             mem8 = 1;}
+          if(C4 == 0 && mem8 == 1){
+             tecla = 8;
+             mem8 = 0;}  }  // B
+       ////////////////////////////////////////////
+       if(contTeclado1 == 3){
+          if(C1 == 1 && mem9 == 0){
+             mem9 = 1;}
+          if(C1 == 0 && mem9 == 1){
+             tecla = 9;
+             mem9 = 0;}
+
+          if(C2 == 1 && mem10 == 0){
+             mem10 = 1;}
+          if(C2 == 0 && mem10 == 1){
+             tecla = 10;
+             mem10 = 0;}
+
+          if(C3 == 1 && mem11 == 0){
+             mem11 = 1;}
+          if(C3 == 0 && mem11 == 1){
+             tecla = 11;
+             mem11 = 0;}
+
+          if(C4 == 1 && mem12 == 0){
+             mem12 = 1;}
+          if(C4 == 0 && mem12 == 1){
+             tecla = 12;
+             mem12 = 0;} }   //C
+       ////////////////////////////////////////////
+       if(contTeclado1 == 4){
+          if(C1 == 1 && mem13 == 0){
+             mem13 = 1;}
+          if(C1 == 0 && mem13 == 1){
+             tecla = 13;// *
+             mem13 = 0;}
+
+          if(C2 == 1 && mem14 == 0){
+             mem14 = 1;}
+          if(C2 == 0 && mem14 == 1){
+             tecla = 14;
+             mem14 = 0;}
+
+          if(C3 == 1 && mem15 == 0){
+             mem15 = 1;}
+          if(C3 == 0 && mem15 == 1){
+             tecla = 15; // #
+             mem15 = 0;}
+
+          if(C4 == 1 && mem16 == 0){
+             mem16 = 1;}
+          if(C4 == 0 && mem16 == 1){
+             tecla = 16; //
+             mem16 = 0;}   } // D
+        /////////////////////////////////
+       /*switch(tecla){
+           case 1  : tecla=1  ;break;
+           case 2  : tecla=2  ;break;
+           case 3  : tecla=3  ;break;
+           case 4  : tecla=4  ;break;
+           case 5  : tecla=5  ;break;
+           case 6  : tecla=6  ;break;
+           case 7  : tecla=7  ;break;
+           case 8  : tecla=8  ;break;
+           case 9  : tecla=9  ;break;
+           case 10 : tecla=10 ;break;
+           case 11 : tecla=11 ;break;
+           case 12 : tecla=12 ;break;
+           case 13 : tecla=13 ;break;
+           case 14 : tecla=14 ;break;
+           case 15 : tecla=15 ;break;
+           case 16 : tecla=16 ;break;}*/
+
+       /*if(tecla>0 && tecla<18){  //FUNCION PARA DESTELLAR UN LED AL PRESIONAR UNA TECLA
+          led1=1;
+          Delay_ms(100);
+          led1=0;
+          tecla=0;}*/
+}
+
+
+void main() {
+
+     ADCON1=0x06;
+     TRISA=0;
+     TRISB = 0b00001111;  // DEFINIER EL PUERTO B ASI
+     TRISC = 0b00000000;
+     
+     PORTA = 0;
+     PORTB = 0;
+     PORTC = 0;
+     
+     tecla = 0;
+
+      while(1){
+      
+        keypad1();
+      }
+}

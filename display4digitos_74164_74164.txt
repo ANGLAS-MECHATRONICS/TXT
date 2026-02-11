@@ -1,0 +1,100 @@
+///// definir como salidas ///////////////////////////////////////////////////
+#define data1   RC5_bit  //data es la union del pin 1 y 2(A1 y A2) del 74164
+#define data2   RC0_bit  //data es la union del pin 1 y 2(A1 y A2) del 74164
+#define clk1    RC4_bit  //clk es el pin8 del 74164
+#define clk2    RC1_bit  //clk es el pin8 del 74164
+
+short cont1 = 0;         // contador para la multiplexacion
+int numero1;             // numero a mostrar en el display
+///////////////// ///////// display catodo comun
+/////////////////////////// a  b  c  d  e  f  g  h
+/////////////////////////// Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
+short const bits1[10][8]={ { 1, 1, 1, 1, 1, 1, 0, 0},  //  0
+                           { 0, 1, 1, 0, 0, 0, 0, 0},  //  1
+                           { 1, 1, 0, 1, 1, 0, 1, 0},  //  2
+                           { 1, 1, 1, 1, 0, 0, 1, 0},  //  3
+                           { 0, 1, 1, 0, 0, 1, 1, 0},  //  4
+                           { 1, 0, 1, 1, 0, 1, 1, 0},  //  5
+                           { 1, 0, 1, 1, 1, 1, 1, 0},  //  6
+                           { 1, 1, 1, 0, 0, 0, 0, 0},  //  7
+                           { 1, 1, 1, 1, 1, 1, 1, 0},  //  8
+                           { 1, 1, 1, 1, 0, 1, 1, 0}}; //  9
+
+void num1(short a){   //funcion para mostrar un numero1
+     short i;
+     short j;
+     for(i=a;i<a+1;i++){     //i<numero1 a mostrar +1
+       for(j=7;j>=0;j--){
+           clk1=0;
+           data1=bits1[i][j];
+           clk1=1;}}}
+//////////////////////////////////////////////////////////////////////
+                          // Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
+short const bits2[4][8]={  { 0, 1, 1, 1, 0, 0, 0, 0},  // 0 millar
+                           { 1, 0, 1, 1, 0, 0, 0, 0},  // 1 centena
+                           { 1, 1, 0, 1, 0, 0, 0, 0},  // 2 decena
+                           { 1, 1, 1, 0, 0, 0, 0, 0}}; // 3 unidad
+
+                           
+void integrado1(short a){   //funcion para el 2do 74164
+     short i;
+     short j;
+     for(i=a;i<a+1;i++){     //i<numero1 a mostrar +1
+       for(j=7;j>=0;j--){
+           clk2=0;
+           data2=bits2[i][j];
+           clk2=1;}}}
+
+void display4_1(){
+     short var1     = 0;
+     int   millar1  = (numero1/1000);
+     short centena1 = (numero1 -(millar1*1000))/100;
+     short decena1  = (numero1 -(millar1*1000)-(centena1*100))/10;
+     short unidad1  = (numero1 -(millar1*1000)-(centena1*100)-(decena1*10));
+     Delay_ms(20);///////// delay para  cambiar
+     cont1++;
+      if(cont1 == 1){
+         integrado1(0);
+         var1 = millar1;}
+      if(cont1 == 2){
+         integrado1(1);
+         var1 = centena1;}
+      if(cont1 == 3){
+         integrado1(2);
+         var1 = decena1;}
+      if(cont1 == 4){
+         integrado1(3);
+         var1 = unidad1;}
+      if(cont1 == 4){cont1 = 0;}
+      switch(var1){
+         case 0: num1(0);break;
+         case 1: num1(1);break;
+         case 2: num1(2);break;
+         case 3: num1(3);break;
+         case 4: num1(4);break;
+         case 5: num1(5);break;
+         case 6: num1(6);break;
+         case 7: num1(7);break;
+         case 8: num1(8);break;
+         case 9: num1(9);break;}}
+//////////////////////////////////////////////////////////////////////////////////
+void main(){
+  ADCON1=0x06;
+  
+  TRISA = 0;
+  TRISB = 0b00000000;
+  TRISC = 0b00000000;
+  
+  PORTA=0;
+  PORTB=0;
+  PORTC=0;
+
+  numero1=1234;
+
+   while(1){
+
+    display4_1();
+
+   }
+
+}

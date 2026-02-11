@@ -1,0 +1,85 @@
+///////////////////////////// DIRECTIVAS DE PREPROCESADO //////////////////////
+
+/// libreria para el manejo del pic16f887
+#include <16F887.h>
+
+/// declara la frecuencia del cristal
+#use delay(clock=8000000)
+#fuses HS, NOWDT, NOPUT, NOPROTECT, INTRC_IO, BROWNOUT, NOLVP, NOPROTECT, NOCPD, NOFCMEN
+
+///configura los fusibles
+/// HS es la configuración  del oscilador la cual indica High speed es decir
+/// frecuencias altas esto es a partir de 8 Mhz.
+
+/// NOWDT deshabilita el Watch Dog Timer
+
+/// NOPUT deshabilita le reseteo de power up timer
+
+/// NOPROTECT deshabilita la proteccion del codigo del pic.
+
+/// INTRC_IO nos indica que se va a utilizar el oscilador interno sin salida de
+/// reloj
+
+/// NOBROWNOUT habilita el reseteo automatico en caso de bajo voltaje.
+
+/// NOLVP deshabilita la programación de bajo voltaje.
+
+/// NOPROTECT deshabilita la protección de lectura de codigo de programa
+
+/// NOCPD deshabilita la proteccion de lectura de la memoria eeprom
+
+/// NOFCMEN deshabilita el monitor de falla de oscilador
+
+/// asignamos a variable port_b el espacio memoria 0x08 que es la dir de port_d
+#byte port_d=0x08
+
+//////////////////////////GLOBALES//////////////////////////////////////////////
+/// Estos parámetros son visibles desde todo el código ///
+/// por eso se les llama globales ///
+/// Al ser constantes,lo más práctico es declararlas aquí. ///
+////////////////////////////////////////////////////////////////////////////////
+
+int contador;
+
+////////////////////////// Principal //////////////////////////////////////////
+
+void main()
+{
+
+/// configura el oscilador interno con con 8MHZ
+
+setup_oscillator(OSC_8MHZ|OSC_INTRC);
+
+/// declaramos el puerto D como salidas
+
+set_tris_d(0);
+
+/// lo igualamos con cero para que tengamos un valor inicial de lo contrario no sabriamos con que valor iniciaria al comienzo de nuestro programa
+port_d=0;
+
+/// bucle infinito para que las instrucciones que tiene siempre se ejecuten
+while (true)
+
+{
+
+/// activa todos los pins del puerto B, otra instrucción  que podemos poner es contador=255 las dos son lo mismo
+
+contador=0xff;
+
+port_d=contador;
+
+/// Retardo de 1000 milisegundos es decir 1 segundo
+delay_ms(1000);
+
+//// apaga todos los pins del puerto B
+contador=0x00;
+port_d=contador;
+
+delay_ms(1000);
+
+/// fin de bucle while
+
+}
+
+/// fin de funcion principal main
+}

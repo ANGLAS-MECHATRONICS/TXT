@@ -1,0 +1,49 @@
+estPlay     = digitalRead(botonPlay);
+  estAdelante = digitalRead(botonAdelante);
+  estAtras    = digitalRead(botonAtras);
+  ///////////////////////////////////////////
+  if(estPlay==0 && memPlay==0){
+     memPlay = 1;}
+  if(estPlay==1 && memPlay==1){
+     suma=suma+1;
+     memPlay = 0;}
+     
+  if(suma == 1){
+     tecla = 'p';
+     suma=2;}
+  if(suma == 3){
+     tecla = 'P';
+     suma=0;}
+  //////////////////////////////////////////
+  if(estAdelante==0 && memAdelante==0){
+     memAdelante = 1;}
+  if(estAdelante==1 && memAdelante==1){
+     tecla = '>';
+     memAdelante = 0;}
+
+  if(estAtras==0 && memAtras==0){
+        memAtras = 1;}
+  if(estAtras==1 && memAtras==1){
+        tecla = '<';
+        memAtras = 0;}
+  //////////////////////////////////////////
+      
+  switch(tecla){ 
+    case 'p': Serial.println("Play ");
+              sendCommand(CMD_PLAY, 0);
+              break;
+    case 'P': Serial.println("Pause");
+              sendCommand(CMD_PAUSE, 0);
+              break;
+    case '>': Serial.println("Next");
+              sendCommand(CMD_NEXT_SONG, 0);
+              sendCommand(CMD_PLAYING_N, 0x0000); 
+              break;
+    case '<': Serial.println("Previous");
+              sendCommand(CMD_PREV_SONG, 0);
+              sendCommand(CMD_PLAYING_N, 0x0000); 
+              break;}
+  tecla = 'x';
+  delay(150);
+  Serial.println(tecla);
+}

@@ -1,0 +1,4 @@
+INVENTOR DISEÑAR CARCASA
+
+1. El PCB.iam que se exporta de altium convertir a IPT: https://www.youtube.com/watch?v=u14Regh5hCI
+2. 

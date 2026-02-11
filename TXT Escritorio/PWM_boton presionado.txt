@@ -1,0 +1,91 @@
+#define botonA1 RA0_bit
+#define botonA2 RA1_bit
+#define botonLed1 RA2_bit
+#define botonLed2 RA3_bit
+
+sbit LCD_RS at RC0_bit;
+sbit LCD_EN at RC3_bit;
+sbit LCD_D4 at RC4_bit;
+sbit LCD_D5 at RC5_bit;
+sbit LCD_D6 at RC6_bit;
+sbit LCD_D7 at RC7_bit;
+
+sbit LCD_RS_Direction at TRISC0_bit;
+sbit LCD_EN_Direction at TRISC3_bit;
+sbit LCD_D4_Direction at TRISC4_bit;
+sbit LCD_D5_Direction at TRISC5_bit;
+sbit LCD_D6_Direction at TRISC6_bit;
+sbit LCD_D7_Direction at TRISC7_bit;
+
+short brillo;
+short ledLCD1;
+short ledLCD2;
+short mem1;
+short mem2;
+int duty; 
+char brilloLCD[6];
+
+void main() {
+
+ ADCON1 = 0x06;
+ TRISA = 1;
+ TRISC = 0;
+ PORTA = 0;
+ PORTC = 0;
+ Lcd_Init();
+ Lcd_Cmd(_LCD_CURSOR_OFF);
+ Lcd_Cmd(_LCD_CLEAR);
+ PWM1_Init(2000);
+ PWM2_Init(2000);
+ 
+
+  while(1){
+  
+    if(botonA2 == 1 && mem1 == 0){
+       mem1 = 1;}
+    if(botonA2 == 0 && mem1 == 1){
+       duty = duty + 10;
+       mem1 = 1;}
+    
+    if(botonA1 == 1 && mem1 == 0){
+       mem1 = 1;}
+    if(botonA1 == 0 && mem1 == 1){
+       duty = duty - 10;
+       mem1 = 1;}
+    
+    if(duty > 255){
+       duty = 255;}
+    if(duty < 0){
+       duty = 0;}
+    ////////////////////////////////////////   
+    if(botonLed1 == 1){
+         ledLCD1 = 1;
+         ledLCD2 = 0;
+         Lcd_Out(2,10,"LED1");}
+         
+    if(botonLed2 == 1){
+         ledLCD1 = 0;
+         ledLCD2 = 1;
+         Lcd_Out(2,10,"LED2");}
+    ////////////////////////////////////////     
+    if(ledLCD1 == 1){
+       PWM2_Stop();
+       PWM1_Start();
+       PWM1_Set_Duty(duty);}
+    
+    if(ledLCD2 == 1){
+       PWM1_Stop();
+       PWM2_Start();
+       PWM2_Set_Duty(duty);}
+    
+     brillo = duty/2.55; //convierte de 0-255, a 0 a 100%
+     ShortToStr(brillo,brilloLCD);
+     Lcd_Out(1,1,"BRILLO: ");
+     Lcd_Out(1,12,brilloLCD);
+     Lcd_Out(1,16,"%");
+     Lcd_Out(2,1,"SELECT: ");
+    
+    
+    
+    }  
+}

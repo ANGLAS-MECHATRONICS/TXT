@@ -1,0 +1,34 @@
+https://www.youtube.com/watch?v=622N3SBf6jk
+
+https://www.luisllamas.es/enviar-recibir-numeros-puerto-serie-arduino/
+
+
+En primer lugar, la función strtok realiza todo el trabajo de separar datos, antes de su uso tengo declarado dos variables; una variable para almacenar los datos de llegada y otra para separar estos datos:
+
+char datos[13];
+char separador[] = "CFK";
+
+Cuando tenemos datos de ingreso, vienen almacenados en la variable datos[13] para posteriormente ser separados, por ejemplo: 21C69F294K
+En definitiva obtenemos 21C que corresponde al primer dato, 69F el segundo dato y 294K al tercer dato de nuestras temperaturas. Como puedes observar cada dato esta seguido de su propia unidad C, F, y K, por lo tanto necesitamos separar cada una de ellas a través de la función strtok.
+
+La variable separador[] es un array de strings que contiene las unidades separadoras C, F, y K.
+
+En definitiva la función strtok divide la variable datos[13] en una serie de tokens (cadena de caracteres para cada variable) utilizando el delimitador (separador). Devuelve un puntero al primer carácter de un token. Si no se encuentra ningún token, se devuelve un puntero nulo.
+
+resultado = strtok( datos, separador );
+
+Significa que obtenemos un puntero para cada token almacenados en la variable resultado (declarada como char *resultado = NULL;) para identificar cada dato; 21, 69 y 294.
+
+Estos datos vienen almacenados por separado en otro vector (declarada como int valores[] = {0,0,0};), convertidos directamente de string a entero a través de la función atoi:
+
+valores[index++] = atoi(resultado);
+
+  valores[0] -> 21
+  valores[1] -> 69
+  valores[2] -> 294
+
+Este es un ejemplo de esta funcion en C:
+https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
+
+Espero que te haya servido esta explicación.
+Saludos...?

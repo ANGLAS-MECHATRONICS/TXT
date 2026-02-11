@@ -1,0 +1,47 @@
+1ro instalar git bash: https://git-scm.com/install/windows
+luego ir a la caperta que se quiere subir y dar anticlick y git bash y se abrira la terminal
+
+///////////////////// COMANDOS GIT PARA SUBIR LOS ARCHIVOS POR 1RA VEZ /////////////////////
+
+git init
+git status 
+	si sale error colocar esta linea -> git config --global --add safe.directory E:/GIOVANNY_TODO/SKETCHS/STM32
+
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ANGLAS-MECHATRONICS/STM32.git
+git push -u origin main
+	luego de esto aparecera una ventana, inciiamos sesion den github y listo.
+
+///////////////////// SUBIR CAMBIOS DEL MISMO ARCHIVOS /////////////////////
+
+git init
+git status 
+git add .
+git commit -m "first commit"
+git push -u origin main
+
+///////////////////// Para subir a git desde stm32cubeide /////////////////////
+
+Primero descargar de Help >> Eclipse Marketplace >> Buscar "EGIT" >> confirmar todo >> selec all >> trsted confirm 
+
+- en la parte inferior buscar la pestaña "Git Staging", o escribir  eso en la lupa de la parte superior derecha
+- anticlik al proyecto > Team > Add to idex (ó en la parte de unstaged changes, darle clic en el signo de DOBLE + VERDE)
+- anticlik al proyecto > Team > commit, luego escribir el commit y click en commit & push (o colocar el cursor en la pestaña de commit)
+- luego colocar su correo de github y en password colocar el TOKEN
+
+aqui mas corto:
+1. Busca git stagting en la lupa
+2. Dale click al icono verde de doble +, esto carga todos los cambios q subir a github
+3. Escribir en commit mesage, el mensaje con el que subira
+4. Click en Commit and Push
+
+vlpxnda1234@gmail.com 
+MI TOKEN 22/07/2024 ES: gXhXp_0nNHrgVASLpyADT26Qkz9IgRiMWhtS3qYUzR(borrar las dos X)
+
+
+
+/////////// aqui algunos codigos de github ////
+Esto borra solo el historial, no tus códigos, es para cuando sale error porq no puede subir un archivo y eliminamos ese archivo y tenemos que actualizar el historial 
+con git init add . pero antes de colocar esto se coloca esto:  rm -rf .git

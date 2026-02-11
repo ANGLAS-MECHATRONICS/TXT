@@ -1,0 +1,16 @@
+MPLAX IDE XC8 
+1. Crear un nuevo proyecto "Microchip embebided"  y "standar proyecto"
+2. Crear en "SOURCE FILES" UN "MAIN.C" y asignarle el nombre de "main" y aceptar
+3. Anticlick en "SOURCE FILES">New>Other>C>C SOURCE FILES>next>escribir "config">Finish
+4. Configurar los fuses en Windows>Target Memory Views>Configuration Bits>Generate Source Code
+5. Copiar todo en "config.c"
+6. Crear un archio config.h en Header Files y escribir 
+	#ifndef CONFIG_H
+	#define	CONFIG_H
+	#define _XTAL_FREQ 8000000 
+7. Incluir en el main.c #include "config.h" y compilar
+
+80: 10000000 - 128
+90: 10010000 - 144
+88: 10001000 - 136
+98: 10011000 - 152

@@ -1,0 +1,7 @@
+//Formatear la micro SD en FAT a 16kbytes me funciono
+//Y la carpeta en la micro sd tiene que llamarse "Video", yo le puse "Videos_135_240_30fps" y no me funciono reproducir 3 videos seguidos
+	Comando para convertir un video a mjpeg:
+		ffmpeg -i input.mp4 -vf "fps=30,scale=-1:135:flags=lanczos,crop=240:in_h:(in_w-240)/2:0" -q:v 11 135_240_30fps.mjpeg
+	Comando para convertir un video a aac:
+		ffmpeg -i input.mp4 -ar 44100 -ac 1 -ab 24k -filter:a loudnorm -filter:a "volume=-5dB" 44100.aac
+	

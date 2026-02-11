@@ -1,0 +1,26 @@
+PARA CREAR ROOMS, en Sheet1.SchDoc ir a
+
+1. Design > Rules 
+	- Routing > Width > Width: min 0.254 max:4mm(lo que usaremos en todos los anchos de pista)
+	- Manufacturing > 
+		> Hole Size                :  min:0.025mm max:2.54mm(default)  configurar dependiendo de loque necesitemos:
+		> HoleToHoleClearance      : 0.254mm(default)
+		> MinimumSolderMaskSliver  : 1mil o 2mil
+		> SilkToSolderMaskClearance: 0mm
+		> SilkToSilkClearance      : 0.254mm(default)
+		> NetAntennae              : 0mm(default)
+		> 
+
+
+
+	- Aqui desmarcar el 1er check de "Component Classes" (el que esta mas a la izquierda)
+	- Y en la parte de abajo, marcar el los 3 checks de 
+		- "Generate Component Classes" 
+		- "Generate Rooms for Component Classes"
+		- "Generate Net Classes" 
+2. Luego seleccionar los componentes a agregar Room y en las propiedades de la parte derecha seleccionar "Parameters"
+3. Dar click en "Add" y agregar estos datos:
+	- Name : ClassName
+	- Value: MT3608 (el nombre que queremos)
+4. Luego crear el PCB y dar click en:
+	- Design > Update PCB Document

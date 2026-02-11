@@ -1,0 +1,6 @@
+FreeRTOS STM32
+
+ControllersTech - https://www.youtube.com/watch?v=muOL9SH0p9g&list=PLfIJKC1ud8gj1t2y36sabPT4YcKzmN_5D 
+DigiKey ESP32   - https://www.youtube.com/watch?v=F321087yYy4&list=PLEBQazB0HUyQ4hAPU1cJED6t3DU0h34bz&index=1
+DigiKey STM32   - https://www.youtube.com/watch?v=hyZS2p1tW-g&list=PLEBQazB0HUyRYuzfi4clXsKUSgorErmBv&index=1
+

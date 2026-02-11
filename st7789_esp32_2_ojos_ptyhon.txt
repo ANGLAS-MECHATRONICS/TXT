@@ -1,0 +1,8 @@
+1.Abrir CMD
+2. Ubicarse en la ruta con el comando:
+	cd C:\Users\PC\Desktop\PROYECTO_OJOS\CONVERT\CREATE
+1.instalar -> pip install pillow
+2. "sclera" tiene que ser el mismo tamaño que "pupilMap"(160x160) y este 160 colocar en el comando de python
+	python tablegen.py dragonEye/sclera.png dragonEye/iris.png dragonEye/lid-upper-symmetrical.png dragonEye/lid-lower-symmetrical.png dragonEye/lid-upper.png dragonEye/lid-lower.png 160 dragonEye/pupilMap.png > custom1.h
+
+

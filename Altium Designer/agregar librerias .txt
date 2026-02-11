@@ -1,0 +1,15 @@
+dar anticlick al proyecto y agregar item existente y ahi seleccionar
+>>Add Existing to Projetc
+BST.PcbLib
+BST.SchLib
+
+luego compilar
+
+esos 2 archivos anteriores deben estar en la misma ruta del proyecto
+E:\GIOVANNY_TODO\PCB\Altium\Mis PCBs\PROYECTOS FREELANCER\OCCITEM_CONTROLE_V3
+
+
+1. Copiar los archivos BST.PcbLib BST.SchLib a la ruta dentro del proyecto
+   E:\GIOVANNY_TODO\PCB\Altium\Mis PCBs\PROYECTOS FREELANCER\OCCITEM_CONTROLE_V3
+   
+2. Dar anticlick al proyecto >> Add Existing to Project >> Seleccionar los archivos 

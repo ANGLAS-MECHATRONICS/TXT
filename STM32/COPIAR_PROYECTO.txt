@@ -1,0 +1,12 @@
+PASOS PARA COPIAR UN PROYECTO EN STM32
+
+1. Ctrl + C al proyecto de la parte izquierda (ejemplo "VIDEO_PLAYER" se llama el proyecto)
+2. Ctrl + V y cambiar el nombre (cambiar a "VIDEO_PLAYER_2"
+3. Dentro de VIDEO_PLAYER_2 cambiar el nombre de .ioc a VIDEO_PLAYER_2
+4. Eliminar el .launch
+5. Abrir VIDEO_PLAYER_2.ioc y generar de nuevo todo el cogido (engranaje amarillo)
+6. Compilar (click en martillo)
+7. Subir el programa (click en el > verde) y seleccionar VIDEO_PLAYER_2.elf y OK y ya esta!!!
+
+9. Ahora para tener todo ordenado, en la carpeta Degub dentro del proyecto
+	- Eliminar los .bin .hex .list .map antiguos y el .elf tmbn

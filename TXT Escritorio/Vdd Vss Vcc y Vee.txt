@@ -1,0 +1,20 @@
+lunes, 13 de octubre de 2008
+Vcc, Vdd , Vee y Vss
+Siempre ha sido un poco intrigante y hasta confusa la nomenclatura de estos voltajes de alimentacion. Desde un Principio nos enseñan que Vcc es voltaje positivo (normalmente de 5 voltios) pero cuando llegamos a microcontroladores nos encontramos con pines de Vdd, Vss y Vdd. Quizá a muchos no les ha intrigado esto pero a mi si, por lo tanto investigué un poco sobre esto.
+
+A que se debe la nomenclatura?
+* Esta depende de el tipo de transistores que tenga internamente el dispositivo electronico, en este caso, el microcontrolador.
+
+*Si esta formado internamente por transistores bipolares (BJT), entonces la nomenclatura será:
+-Vcc por ser el voltaje aplicado al Colector de los transistores
+-Vee por ser el voltaje aplicado al Emisor de los transistores
+
+*Si esta formado internamente por transistores de efecto de campo (FET, MOSFET), la nomenclatura será:
+-Vss por ser el voltaje aplicado al Surtidor de los transistores
+-Vdd por ser el voltaje aplicado al Drenador de los transistores
+
+Entonces cual es la polaridad de cada uno?
+*Vcc y Vdd son voltajes de alimentacion Positiva
+*Vee y Vss son voltajes de alimentacion Negativa o van conectados a tierra.
+
+Espero que esto les sea de utilidad.

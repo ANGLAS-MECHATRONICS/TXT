@@ -1,0 +1,23 @@
+PARA CREAR ROOMS, en Sheet1.SchDoc ir a
+
+1. Project > Project Options... > Class Generation 
+	- Aqui desmarcar el 1er check de "Component Classes" (el que esta mas a la izquierda)
+	- Y en la parte de abajo, marcar el los 3 checks de 
+		- "Generate Component Classes" 
+		- "Generate Rooms for Component Classes"
+		- "Generate Net Classes" 
+		- Recuerda hace anotaciones en "Tool > Anotation" antes de crear la PCB, sino los ROOMS lo hace mal
+2. Luego seleccionar los componentes a agregar Room y en las propiedades de la parte derecha seleccionar "Parameters"
+3. Dar click en "Add" y agregar estos datos:
+	- Name : ClassName
+	- Value: MT3608 (el nombre que queremos)
+4. Luego crear el PCB y dar click en:
+	- Design > Update PCB Document
+	
+	
+	
+///////////////////////////////////
+Si no queremos que cree un ROOM general para todos los componentes se desactiva de esta manera
+
+1. Project > Project Options... > Class Generation 
+	- Aqui desmarcar el 1er check de "Component Classes" (el que esta mas a la izquierda), si tenemos varios squematicos desmarcar de todos los esquematicos

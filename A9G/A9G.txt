@@ -1,0 +1,36 @@
+MODULO A9G 
+
+- IO25 o "GPIO25": Pin de bajo consumo de energia 
+				   nivel bajo "0": entrar en bajo consumo de energia
+				   nivel alto "1": consumo de energia normal
+- PWRKEY : Pin de encendido
+		   nivel bajo "0": Encendido (por 3 segundos)
+		   nivel alto "1": --------
+- RESET :  Pin de reset
+		   nivel bajo "0": reset (<0.05V, 70mA)
+		   nivel alto "1": normal
+- IO29 : Pin de apagado
+		   nivel bajo "0": Apagado 
+		   nivel alto "1": --------	
+- IO28 : Pin del led indicador de estado del GPS
+- IO27 : Pin del led indicador de estado de la red GPRS	
+- IO26 : Pin indicador de baja potencia, si llega un SMS, despierta al telefono
+		 Habra un pulso de 50ms en este pin cuando pase eso.
+-VBAT  : Pines de la fuente de alimentación externa 3.5V ~ 4.2V
+		 La corriente máxima de la fuente de alimentación no debe ser inferior a 2A.
+-SPK_P : Polo positivo del SPEAKER
+-SPK_N : Polo negativo del SPEAKER
+
+-53 UART1_RXD AT : Pin RXD del puerto serie. Pin nivel 2.8V 
+				   Compatible con 3.3V, no compatible con 5V.
+-54 UART1_TXD AT : Pin TXD del puerto serie. Pin nivel 2.8V 
+				   Compatible con 3.3V, no compatible con 5V.
+				  
+////////////////////////// AGREGAR AL PCB ///////////////////////////////////
+- falta divisor resistivo para la lecutra analoguica de la medicion de la bateria
+- dividores resistivos para los pines RX y TX del A9G para que funcionen de 2.8 a 3.3v max
+  con referencia de VBAT 3.5V - 4.2V (15k,56k)
+
+-agregar capacitor bypass para el atmega328
+- agregar capacitor para el motor de vibracion
+- cambiar el J3Y ya que esta mal la distribucion de pines

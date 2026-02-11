@@ -1,0 +1,21 @@
+Actualmente los paneles solares se encuentran instalándose por todas partes del mundo, para tener una energía libre, limpia, económica y sustentable. El dispositivo que invente sirve para aprovechar al máximo este tipo de energía para la cual comprobaremos que un "panel con un seguidor solar" brinda mayor eficiencia energética que un "panel solar sin seguidor" o es decir un panel en una posición fija como esta siendo usado actualmente.	
+
+El Dispositivo sirve para medir y comparar "un panel solar con seguidor solar" y un "panel solar sin seguidor" la eficiencia de cada uno, la cual cuentan ambos ala vez con sensores de Temperatura, Humedad Relativa, Presión Atmosférica, Intensidad de Rayos Uv, Altitud y cosas de climatología, la cual las manda al celular vía bluetooth y es monitoreada por una aplicación android en tiempo real (gracias a un RTC DS1307)  y ala vez todo esta siendo almacenado en una memoria MicroSD para así posteriormente pasarla a EXCEL y trabajar con los datos. El dispositivo es a prueba de lluvias y puede instalarse en los techos de los lugares a monitorear todas esas magnitudes sin problemas.
+
+3 servomotores SG90 
+2 celda fotovoltaica de 5V 100mA 
+4 LDR o fotoresistencias 
+1 arduino mega 
+4 condesadores de 22pF 
+2 ventiladores de 9v 
+4 condensadores de 220uF a 25V 
+Resistencias de 1.8k, 3.3k, 10k 
+1 RTC DS1307(reloj tiempo real) 
+1 modulo bluetooth HC-05 
+1 DHT11(sensor T° y humedad) 
+2 ML8511(sensor Rayos UV) 
+1 BMP180(sensor Presion y Altitud) 
+1 Memoria SDcard 4GB +Adaptador 
+1 Trimer 1K 
+1 Regulador LM317T 
+1 Fuente de 9V 1A	

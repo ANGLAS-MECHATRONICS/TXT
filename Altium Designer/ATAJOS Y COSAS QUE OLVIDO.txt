@@ -1,0 +1,2 @@
+- Para cambiar el grosor de PCB y las editar vias de las pistas, si pasaran toda la pcb o solo hasta la mitad, etc
+ [1]TOP LAYER [2]BOTTOM LAYER..... ahi anticlick y "Layer stack manager"

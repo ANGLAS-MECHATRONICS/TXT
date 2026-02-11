@@ -1,0 +1,10 @@
+- HOLE SIZE para HEADER MALE 2.54mm pitch - entre 30 y 35mil, yo uso 30mil
+- colocacion de planos de potencia de pcb - https://www.youtube.com/watch?v=v_RyXj87cwA
+- todo sobre planos de potencia y poligonos - https://www.youtube.com/watch?v=QyyYewFonKI
+- grosor de pistas y vias para potencia SATURNO - https://www.youtube.com/watch?v=WPT96w3eLAM
+- 10 trucos para rutear GND/VCC - https://www.youtube.com/watch?v=AhJEJWTKUVI
+- Comprobación y corrección de DRC - https://www.youtube.com/watch?v=FTwBnazRqD0
+- Altium Importando componentes desde SnapEda - https://www.youtube.com/watch?v=28_8Ewz03fs
+- Altium importar imagenes y modificar tamaño - https://www.youtube.com/watch?v=Gw6r6P5INFY&t=211s
+- Crear rooms: https://www.youtube.com/watch?v=cfbQ-ASFavk&list=PL3aaAq2OJU5FBwwN5jQLdTG9YryjJ-0g0&index=2
+- Importar PDF : https://www.youtube.com/watch?v=Jyg_KJveZwc

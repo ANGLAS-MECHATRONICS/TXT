@@ -1,0 +1,78 @@
+MODULO BLUETOOTH ALIEXPRES
+
+-abrir arduino COM3 115200 "Both NL & CR"
+TODA LA INFO LA SAQUE DE AQUI: https://github.com/Mark-MDO47/BluetoothAudioTransmitter_KCX_BT_EMITTER/blob/master/ProgrammingArduino/ProgrammingArduino.ino
+
+Comandos AT para Módulo Bluetooth (Descripción en Español)
+1. Comando de Prueba
+	Descripción: Verifica si la comunicación es normal.
+	Comando  : AT+
+	Respuesta: OK+
+	
+2. Reinicio del Sistema
+	Descripción: Reinicia el sistema.
+	Comando  : AT+RESET
+	Respuesta: OK+
+			   REST
+			   POWER ON
+			   
+3. Consultar Versión de Software
+	Descripción: Verifica la versión del software.
+	Comando  : AT+GMR?
+	Respuesta: OK+VERS:KCX_BT_RTX_Vx.x
+	
+4. Consultar Estado de Conexión
+	Descripción: Verifica el estado de la conexión Bluetooth.
+		x=0: Sin conexión.
+		x=1: Conectado.
+	Comando  : AT+STATUS?
+	Respuesta: OK+STATUS:x
+	
+5. Conectar por Dirección MAC
+	Descripción: Conecta a un dispositivo Bluetooth utilizando su dirección MAC.
+	La dirección MAC debe tener EXACTAMENTE 12 caracteres (completa con ceros si es necesario).
+	Comando  : AT+CONADD=0x35e4b554c61a                   
+	Respuesta: OK+CON:0xf44efdecd39d
+
+6. Desconectar
+	Descripción: Desconecta la conexión Bluetooth actual.
+	Comando  : AT+DISCON
+	Respuesta: OK+DISCON
+	
+7. Escanear Dispositivos Bluetooth Visibles
+	Descripción: Busca dispositivos Bluetooth disponibles y muestra la información encontrada.
+	Comando  : AT+PAIR
+	Respuesta: OK+SCAN
+			   New Devices:1
+			   MacAdd:0xf44efdecd39d
+			   Name:Bluetooth Audio
+			   ALL Devices=1
+		   
+8. Añadir Dirección MAC a la Lista de Auto-Conexión
+	Descripción: Añade una dirección MAC a la lista interna para conexión automática.
+	Se pueden almacenar hasta 10 dispositivos.
+	Comando  : AT+ADDLINKADD=0x35e4b554c61a
+	Respuesta: OK+ADDLINKADD
+			   VM_MacAdd 1 =0xf44efdecd39d
+
+9. Asociar Nombre Bluetooth para Auto-Conexión
+	Descripción: Especifica un nombre Bluetooth para conexión automática.
+	Se pueden almacenar hasta 10 nombres.
+	Comando  : AT+ADDLINKNAME=S1 Pro MDO
+	Respuesta: OK+ADDLINKNAMEVM_Name 0 =S1 Pro MDO
+
+10. Consultar Área de Memoria de Auto-Conexión
+	Descripción: Devuelve toda la información almacenada en la memoria para reconexión automática.
+	Comando  : AT+VMLINK?
+	Respuesta:
+	OK+VMLINK
+	BT_ADD_NUM=1
+	BT_NAME_NUM=1
+	Last_Add=0xf44efdecd39d
+	VM_MacAdd0=0xf44efdecd39d
+	VM_Name0=S1 Pro MDO
+
+11. Eliminar Todos los Registros en la Memoria de Auto-Conexión
+	Descripción: Borra todas las direcciones MAC y nombres almacenados en la memoria de auto-conexión.
+	Comando  : AT+DELVMLINK
+	Respuesta: Delete_Vmlink

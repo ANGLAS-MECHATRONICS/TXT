@@ -1,0 +1,122 @@
+#include <LiquidCrystal_I2C.h>     // incuimos la libreria para el uso de la pantalla
+#include<Wire.h>                   // incluimos la libreria wire es para la oomunucacion I2C                    
+LiquidCrystal_I2C lcd(0x27,16,2);  // comando de programacion lcd(direccion,16 columnas, 2 filas)
+
+#define alcoholimetro A0           // le asignamos un nombre a cada pin del aurduino
+#define buzzer        13         //int buzzer = 13;  asi tmbn puede ir 
+#define led1          8
+#define led2          9
+#define led3          10
+#define led4          11
+#define led5          12
+#define rele          2  // o puede ser asi: int rele=2;
+
+  
+float valor_alcohol;          // float: para decimales 
+float porcentaje;             // int: entero            
+
+
+void setup() {
+  
+ Serial.begin(9600);    // comunicar el arduino con la pc
+ pinMode(led1, OUTPUT); //le designo salidas a los leds
+ pinMode(led2, OUTPUT); 
+ pinMode(led3, OUTPUT);
+ pinMode(led4, OUTPUT);
+ pinMode(led5, OUTPUT);
+ pinMode(buzzer, OUTPUT);   //salidas
+ pinMode(rele, OUTPUT);
+ ///////////////
+ lcd.init();               // inicializamos el lcd
+ lcd.backlight();          // encender el brillo de la pantalla
+ lcd.clear();              // LIMPIAR EL LCD
+ ////////////
+ lcd.setCursor(0,0);            // ponemos el cursor en 0,0 
+ lcd.print("INICIANDO TEST");   // escribimos el sgte texto para mostrar en la lcd
+ lcd.setCursor(0,1);            // ponemos el cursor en 0,1(columna, fila)
+ lcd.print("DETECTOR ALCOHOL");  
+ delay(3000);                  //esperamos 3seg
+ lcd.clear();                  //limpiamos el lcd
+/////////////////////////////////////
+ lcd.setCursor(0,0);          //ponemos el cursor en 0,0
+ lcd.print("TEST: ");
+ lcd.setCursor(0,1);
+ lcd.print("ALCOHOL: ");
+ delay(100);                   // delay 0.1seg para estabilizar el prograama
+ 
+ }
+/////INICIA EL PROGRAMA //////////////////////
+void loop() {
+
+  valor_alcohol = analogRead(alcoholimetro);   //lectura analogica A0 (0-1024)
+  porcentaje = (valor_alcohol/10000);         //convertimos a porcentaje de 0.00% a 0.10%  
+  
+  if(porcentaje >=0.00 && porcentaje < 0.01){
+    digitalWrite(led1,LOW);  //DIGITALWRITE ES PARA activar o desactivar
+    digitalWrite(led2,LOW);
+    digitalWrite(led3,LOW);
+    digitalWrite(led4,LOW);
+    digitalWrite(led5,LOW);
+    digitalWrite(buzzer,LOW);
+    digitalWrite(rele,LOW);}
+    
+  if(porcentaje >=0.01 && porcentaje < 0.02){
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,LOW);
+    digitalWrite(led3,LOW);
+    digitalWrite(led4,LOW);
+    digitalWrite(led5,LOW);
+    digitalWrite(buzzer,LOW);
+    digitalWrite(rele,HIGH);}
+
+  if(porcentaje >=0.02 && porcentaje < 0.03){
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,HIGH);
+    digitalWrite(led3,LOW);
+    digitalWrite(led4,LOW);
+    digitalWrite(led5,LOW);
+    digitalWrite(buzzer,LOW);
+    digitalWrite(rele,HIGH);}
+
+  if(porcentaje >=0.03 && porcentaje < 0.04){
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,HIGH);
+    digitalWrite(led3,HIGH);
+    digitalWrite(led4,LOW);
+    digitalWrite(led5,LOW);
+    digitalWrite(buzzer,LOW);
+    digitalWrite(rele,HIGH);}
+
+  if(porcentaje >=0.04 && porcentaje <0.09){
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,HIGH);
+    digitalWrite(led3,HIGH);
+    digitalWrite(led4,HIGH);
+    digitalWrite(led5,LOW);
+    digitalWrite(buzzer,HIGH);
+    digitalWrite(rele,LOW);}
+
+  if(porcentaje >=0.09 && porcentaje <=0.12){
+    digitalWrite(led1,HIGH);
+    digitalWrite(led2,HIGH);
+    digitalWrite(led3,HIGH);
+    digitalWrite(led4,HIGH);
+    digitalWrite(led5,HIGH);
+    digitalWrite(buzzer,HIGH);
+    digitalWrite(rele,LOW);}
+    
+ //////////////////////////////////////////////// 
+  if(porcentaje >= 0.04){     // si el valor del alcohol (0-1024) es mayor o igual a valor limite = 400
+    lcd.setCursor(9,0);
+    lcd.print("NO APTO   ");}
+  else{ //sino se cumple lo anterior hace esto
+    lcd.setCursor(9,0);
+    lcd.print("APTO    ");}
+  delay(300);    //para estabilizar el programa
+///////////////////////////////////////////////////
+  lcd.setCursor(9,1);
+  lcd.print(porcentaje);
+  lcd.setCursor(13,1);
+  lcd.print("%  ");
+ 
+}

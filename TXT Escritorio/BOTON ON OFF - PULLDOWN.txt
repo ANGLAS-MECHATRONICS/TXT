@@ -1,0 +1,10 @@
+if(boton1 == 1  &&  estAnterior1 == 0){
+       salida1 = 1 - salida1;
+       Delay_ms(25);}
+       
+       estAnterior1 = boton1;
+       
+       if(salida1 == 1){
+          led = 1;}   
+       else{
+          led = 0;}

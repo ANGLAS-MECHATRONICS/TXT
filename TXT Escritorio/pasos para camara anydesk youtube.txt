@@ -1,0 +1,8 @@
+Video de camaras con anydesk
+
+objetivo: enseñarles a vigilar su casa mediante camaras webs mediante el celular desde cualquire parte del mundo
+
+1.Colocarle un capacitor al cpu de la computadora para encenderla sin la necesidad de pulsar el boton de encendido
+2. Descargar e instalar anydesk en la pc y en el celular y configurarlos para un ingreso automatico
+3. Instalar alexa para PC
+4. 

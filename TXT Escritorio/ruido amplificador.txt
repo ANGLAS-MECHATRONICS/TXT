@@ -1,0 +1,4 @@
+El ruido que se escucha en tu amplificador es generalmente de las corrientes generadas por la fuente de alimentacion AC/DC, y si conectas un ventilador el ruido se incrementa.
+Una forma de darse cuenta es conectar tu amplificador a una bateria, y veras que todo el ruido se va, pero si el ruido sigue allí es por que el diseño de la placa es deficiente (fuente rectificadora muy cerca, condesadores usados, transformador sin aislamiento [fugas electricas y magneticas] y el diseño en si de la pcb).
+Lo primero es quitar el ventilador y buscar en su lugar un disipador adecuado (no exagerar), mover de lugar el cable de GND a otra posición para experimentar, hacer una fuente puente, con condensadores ceramicos para suprimir el ruido, usar un chasis metalico (evita las radiaciones magneticas) y otras cosas lo comentare si recuerdo.
+Suerte.

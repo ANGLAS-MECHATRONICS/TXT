@@ -1,0 +1,14 @@
+HOLE SIZE ALTIUM & ANOTHER 
+
+- HEADER MALE 2.54MM -> 
+   - HOLE SIZE (30-35mil) -> 35mil 
+   - DIAMETER  (55-75mil) -> 65mil 
+   
+   https://www.lcsc.com/product-detail/AC-DC-Power-Connectors_XKB-Connectivity-DC-003-2A-1-3_C319136.html   mini dc jack
+   https://www.lcsc.com/product-detail/USB-Connectors_G-Switch-GT-USB-2020S-CPG1N_C5117891.html  usb small
+   https://www.lcsc.com/product-detail/Buzzers_FUET-FUET-9650B-3V_C391032.html mini buzzer smd
+   https://www.lcsc.com/product-detail/PCB-Welding-Terminal_XFCN-T34069_C481452.html screw terminal horizontal
+   https://www.lcsc.com/product-detail/_Mitsumi-Electric-_C2925423.html mini encoder
+   buscar mini dc jack macho
+   
+   https://www.snapeda.com/parts/KLS1-181E/Ningbo%20KLS%20Electronics/view-part/?ref=search&t=USB%20FEMALE%20TYPE%20A snapeda mi usb

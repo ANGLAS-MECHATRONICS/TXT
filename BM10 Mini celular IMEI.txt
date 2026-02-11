@@ -1,0 +1,3 @@
+BM10 cambiar IMEI con un IMEI  de un celular antiguo
+Consultar numeros de IMEI: *#06#
+Cambiar numeros de IMEI  : *#66*#  

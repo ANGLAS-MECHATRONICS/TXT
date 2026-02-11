@@ -1,0 +1,3 @@
+- En el esquematico al tener dos cables cruzados en forma de cruz o X para sabes que no se estan conectando obviamente es si no forman un nodo
+  pero en altium se puede hacer que en se haga una curva entre esos cables de la siguiente manera:
+	TOOLS > PREFERENCES > DISPLAY CROSS OVER (activar el check)

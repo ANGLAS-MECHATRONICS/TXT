@@ -1,0 +1,12 @@
+- Design > Rules 
+		Design Rules > Plane > Poligon Connect Style
+- Anticlick "New Rule"
+	- 1 Cambiar nombre si se desea
+	- 2 En "Where the first object matches"
+			FOOTPRINT - (seleccionar el nombre del footprint del componente)
+	- 3 En "Where the second object matches"
+		    NET       - (seleccionar el nombre de la net del componente)
+	- 4 SIMPLE es para solo 1 plano y ADVANCED mas planos (selecciona ADVANCED)}
+	- THROUGH HOLE PAD CONNECTION					SMD PAD CONNECTION
+		Connect Style: Relief Connect 0.254mm     		Connect Style: Direct Connect
+									

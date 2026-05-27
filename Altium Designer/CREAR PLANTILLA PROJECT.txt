@@ -1,0 +1,58 @@
+PLANTILLA PROJECT
+
+- Panel (parte inferior derecha) y Explorer
+- Managed Content > Templates > Projects Templates > + Add Templates (colocar un nombre ejem "IDEIPERU_SMD_4_LAYER") 
+- Anticlick en el proyecto creado "PRJT-00XX" y Edit y si se desea cerramos la pestaña
+- Al lado izquierdo se creara como un proyecto comun, y alli anticlick 
+  > Add New to Project > Schematic ( y tambien PCB o de lo que queramos crear las plantillas)
+  
+	- Para crear la plantilla en el esquematico ir a la parte derecha de propiedades selecciona Standard o Custom lo que desee
+	- Escoger el size A4 o A3 y desactivar el title block, y en el vacio crear las lineas 
+	- con Place > Drawing Tools > Line y dibujar todo y agregar texto 
+	- Y darle doble click al texto y selccionar =Document o =ProjectName lo que se necesites
+	- En el lado derecho superior de Propiedades hay General y Parametros, este ultimo es para cambiar el texto del documento
+	- Y para cargar imagen Place > Drawing Tools > Graphic... 
+	- Mover los textos, cambiar el color editar todo y listo guardar.
+	
+- Modificar la plantilla y en el pcb agregar las reglas o cargar el .RUL
+- En la PCB anticlick en la parte inferior de capas y "Layer Stack Manager" y cambiar 2 o 4 capas
+- Al terminar todo anticlick en el proyecto "IDEIPERU_SMD_4_LAYER" y "Save to Server"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+PARA CAMBIAR "REVISION STATE" A DRAFT/APPROVED/OBSOLETE/PLANED
+
+- Panel (parte inferior derecha) y Explorer
+- Managed Content > Templates > Projects Templates >  
+- Anticlick en el proyecto creado "PRJT-00XX" > Operations > Change State
+- Click en process y YES y listo, y para cambiar o volver, hacer nuevamente esa secuencia.
+
+- OJO AQUI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- Al dar Anticlick en el proyecto creado "PRJT-00XX" y luego selccionar UPLOAD
+- Aparecera un cuadro 
+	- Si esta vacio, no darle OK porque sino subira nada a la nube y esto hara que se elimine los archivos que teniamos
+	- Aqui podemos subir los archivos de otro proyecto previamente descargado
+		- Para descargar dar Anticlick en el proyecto creado "PRJT-00XX" > Operations > Download
+		- Luego nos descargara 2 carpetas una Design y otra "Released"
+		- Para subir los archivos seleccionar todos los archivos de la carpeta "Released" y OK y listo
+	
+
+
+	
+	
+	
+	
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+PARA CREAR UNA NUEVA PLANTILLA BASADA EN UNA ANTERIOR
+(Lo mejor es descargar y cargar todos los archivos de la carpeta "Released")
+
+- crear un nuevo proyecto comun de altium como si fuera un nuevo diseño y seleccionar 
+	* File > New Project > y en project type seleccionas -> "IDEIPERU_SMD_2_LAYER.v6"	
+	* Se creara el proyecto con su SHEET1 y su PCB1
+- Panel (parte inferior derecha) y Explorer
+- Managed Content > Templates > Projects Templates > + Add Templates (colocar un nombre ejem "IDEIPERU_TH_2_LAYER") 
+- Anticlick en el proyecto creado "PRJT-00XX" y Edit y si se desea cerramos la pestaña
+- Al lado izquierdo se creara como un proyecto comun, y alli arrastramos SHEET1  y PCB1 y editamos segun necesidad
+- Al terminar todo anticlick en el proyecto "IDEIPERU_TH_2_LAYER" y "Save to Server"
+
+

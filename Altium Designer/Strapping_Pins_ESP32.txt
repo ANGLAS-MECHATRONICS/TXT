@@ -1,0 +1,36 @@
+Checklist rápido para ESP32 en ambiente industrial
+Con el ESP32 revisa esto al rediseñar:
+1️ Alimentación
+•	Buck estable
+•	TVS diode en entrada
+•	Ferrite bead en VCC
+•	470–1000 µF + 100 nF cerca del ESP32
+
+2️ Protección de voltaje
+•	Activar brownout detector
+•	Opcional: supervisor como TPS3813 (WATCHDOG EXTERNO)
+
+3️ Strapping pins (muy importante)
+No usar o proteger:
+•	GPIO0, GPIO2 → pull-up
+•	GPIO12, GPIO15 → pull-down
+Si se usan:
+•	pull-up / pull-down 4.7k–10k
+
+4️ Reset estable
+•	RC en EN pin
+•	capacitor 100 nF
+
+5️ Ruido industrial
+•	plano GND sólido
+•	separar potencia / lógica
+•	optoacopladores para señales externas
+•	evitar cables largos directos al ESP32
+✅ Regla práctica:
+alimentación limpia + strapping pins protegidos = ESP32 estable en campo.
+
+
+
+
+
+

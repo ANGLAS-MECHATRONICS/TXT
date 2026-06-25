@@ -1,0 +1,6 @@
+Getting started with STM32F1 series hardware development	
+
+VDD  100nF y 10uF
+VBAT 100nF
+VDDA 100nF Y 1uF	y VDDA -- ferrite -- VDD
+VREF 100nF Y 1uF	  VREF+ --- res 47 --VDDA

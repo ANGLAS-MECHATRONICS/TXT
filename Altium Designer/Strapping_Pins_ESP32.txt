@@ -12,9 +12,13 @@ Con el ESP32 revisa esto al rediseñar:
 
 3️ Strapping pins (muy importante)
 No usar o proteger:
-•	GPIO0, GPIO2  → pull-up
-•	GPIO12        → pull-down
-•	GPIO5, GPIO15 → pull-down
+GPIO     Función de strapping   Estado al arrancar      Si está...
+GPIO0	   Modo de boot	              HIGH (1)	          LOW → entra al modo descarga/programación
+GPIO2	   Selección de boot	        LOW (0)*	          Puede afectar el arranque
+GPIO5	   SDIO / boot  	            HIGH(1)*	          Debe evitarse forzarlo incorrectamente
+GPIO12	 VDD_SDIO	                  LOW (0)          	  HIGH puede seleccionar una tensión incorrecta para la flash
+GPIO15	 Boot / mensajes ROM	      HIGH (1)	          LOW puede modificar el comportamiento de salida durante boot
+
 Si se usan:
 •	pull-up / pull-down 4.7k–10k
 

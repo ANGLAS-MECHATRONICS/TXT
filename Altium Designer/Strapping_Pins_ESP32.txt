@@ -12,8 +12,9 @@ Con el ESP32 revisa esto al rediseñar:
 
 3️ Strapping pins (muy importante)
 No usar o proteger:
-•	GPIO0, GPIO2 → pull-up
-•	GPIO12, GPIO15 → pull-down
+•	GPIO0, GPIO2  → pull-up
+•	GPIO12        → pull-down
+•	GPIO5, GPIO15 → pull-down
 Si se usan:
 •	pull-up / pull-down 4.7k–10k
 
